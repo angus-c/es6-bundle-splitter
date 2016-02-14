@@ -1,8 +1,8 @@
-# es6-bundler
+# es6-bundle-splitter
 
-`es6-test-runner` is a boilerplate for testing your es6 app using karma runner over mocha and chai. It uses webpack to build the test bundle and babel to transpile it to ES5.
+`es6-bundle-splitter` is a boilerplate for bundle splitting, transpiling and testing es6 modules using babel and webpack
 
-Use it as a template for your es6 modules.
+Use it as a template for your es6 app.
 
 ## Naming Conventions
 
@@ -13,10 +13,10 @@ Tests are expected to end in `.spec.js` and live in the `tests` directory.
 This is just a template module so you wouldn't install it from npm. However it's fully configured for you to make an npm module from your fork of the repo.
 
 ```
-npm install <your fork of es6-test-runner>
+npm install <your fork of es6-bundle-splitter>
 ```
 
-When installed it will transpile your `src` code to es5 and drop into into `lib`. Users installing your module will import `lib.index.js`.
+When installed it will transpile and bundle your source according to the bundles defined in you webpack.config. Bundles will be dropped into `dist`.
 
 ##Testing
 
