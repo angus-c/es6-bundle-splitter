@@ -8,6 +8,7 @@
     "compile": "webpack",
     "prepublish": "npm run compile",
     "lint": "eslint .",
+    "start": "node dist/server.js",
     "test": "npm run lint && karma start --single-run",
     "testc": "karma start --auto-watch"
   },
@@ -34,6 +35,7 @@
     "chai": "^3.5.0",
     "eslint": "^2.0.0",
     "eslint-plugin-react": "^3.16.1",
+    "json-loader": "^0.5.4",
     "karma": "^0.12.37",
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^0.1.8",
@@ -44,5 +46,8 @@
     "karma-webpack": "^1.5.0",
     "mocha": "^2.4.5",
     "webpack": "^1.12.13"
+  },
+  "dependencies": {
+    "express": "^4.13.4"
   }
 }
