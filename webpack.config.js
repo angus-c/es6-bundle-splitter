@@ -1,41 +1,11 @@
-module.exports = [{
+module.exports = {
   entry: {
-    client: './src/client'
-  },
-  output: {
-    path: 'dist',
-    filename: 'client.js'
-  },
-  module: {
-    preLoaders: [
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }
-    ],
-    loaders: [
-      {
-        // es6 js and jsx
-        test: /\.js?$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/,
-        query: {
-          presets: ['react', 'es2015']
-        }
-      }
-    ],
-    watch: true
-  },
-  target: 'web',
-  devtool: 'source-map'
-},
-{
-  entry: {
+    client: './src/client',
     server: './src/server'
   },
   output: {
     path: 'dist',
-    filename: 'server.js'
+    filename: '[name].js'
   },
   module: {
     preLoaders: [
@@ -63,6 +33,6 @@ module.exports = [{
     net: 'empty',
     tls: 'empty'
   },
-  target: 'node',
+  target: ('[name]' === 'server') ? 'node' : 'web',
   devtool: 'source-map'
-}];
+};
