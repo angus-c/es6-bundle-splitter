@@ -1,14 +1,41 @@
-// TODO break this into an array: server config ({target: node} and node polyfills)
-// followed by client config
-
-module.exports = {
+module.exports = [{
   entry: {
-    client: './src/client',
+    client: './src/client'
+  },
+  output: {
+    path: 'dist',
+    filename: 'client.js'
+  },
+  module: {
+    preLoaders: [
+      {
+        test: /\.json$/,
+        loader: 'json-loader'
+      }
+    ],
+    loaders: [
+      {
+        // es6 js and jsx
+        test: /\.js?$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/,
+        query: {
+          presets: ['react', 'es2015']
+        }
+      }
+    ],
+    watch: true
+  },
+  target: 'web',
+  devtool: 'source-map'
+},
+{
+  entry: {
     server: './src/server'
   },
   output: {
     path: 'dist',
-    filename: '[name].js'
+    filename: 'server.js'
   },
   module: {
     preLoaders: [
@@ -38,4 +65,4 @@ module.exports = {
   },
   target: 'node',
   devtool: 'source-map'
-};
+}];
