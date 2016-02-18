@@ -8,9 +8,10 @@
     "compile": "webpack",
     "prepublish": "npm run compile",
     "lint": "eslint .",
-    "start": "node dist/server.js",
+    "start": "webpack && node dist/server.js",
     "test": "npm run lint && karma start --single-run",
-    "testc": "karma start --auto-watch"
+    "testc": "karma start --auto-watch",
+    "watch": "npm start && webpack --watch"
   },
   "license": "MIT",
   "repository": {

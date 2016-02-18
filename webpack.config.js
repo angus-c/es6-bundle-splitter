@@ -1,13 +1,13 @@
-module.exports = {
-  entry: {
-    client: './src/client',
-    server: './src/server'
-  },
-  output: {
+var bundles = ['server', 'client'];
+
+module.exports = bundles.map(function (name) {
+  var config = {};
+  config.entry = './src/' + name;
+  config.output = {
     path: 'dist',
-    filename: '[name].js'
-  },
-  module: {
+    filename: name + '.js'
+  };
+  config.module = {
     preLoaders: [
       {
         test: /\.json$/,
@@ -26,13 +26,14 @@ module.exports = {
       }
     ],
     watch: true
-  },
-  node: {
+  };
+  config.node = {
     console: 'empty',
     fs: 'empty',
     net: 'empty',
     tls: 'empty'
-  },
-  target: ('[name]' === 'server') ? 'node' : 'web',
-  devtool: 'source-map'
-};
+  };
+  config.target = name === 'server' ? 'node' : 'web';
+  config.devtool = 'source-map';
+  return config;
+});
