@@ -4,10 +4,6 @@
 
 Use it as a template for your es6 app.
 
-## Naming Conventions
-
-Tests are expected to end in `.spec.js` and live in the `tests` directory.
-
 ##Installation
 
 This is just a template module so you wouldn't install it from npm. However it's fully configured for you to make an npm module from your fork of the repo.
