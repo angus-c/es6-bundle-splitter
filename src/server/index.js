@@ -1,4 +1,5 @@
 import express from 'express';
+import 'source-map-support/register';
 
 const server = express();
 server.use('/', (req, res) => res.send(req.url.slice(1)));

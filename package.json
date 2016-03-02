@@ -49,6 +49,7 @@
     "webpack": "^1.12.13"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "source-map-support": "^0.4.0"
   }
 }
